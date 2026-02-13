@@ -1,2 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>My Math Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">My Math Hub</div>
+    <nav class="nav">
+      #toolsTools</a>
+      #practicePractice</a>
+      #notesNotes</a>
+      #settingsSettings</a>
+      <button id="modeBtn" class="ghost" aria-label="Toggle dark mode">🌗</button>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>Welcome to Your Math Hub</h1>
+    <p>Launch homework, practice problems, and keep your notes in one place.</p>
+    <div class="cta-row">
+      <button id="openInline" class="primary">Open Homework (inline)</button>
+      <button id="openTab" class="secondary">Open Homework (new tab)</button>
+    </div>
+    <small style="opacity:.8">Tip: set your homework file URL in <b>Settings</b> first.</small>
+  </section>
+
+  <main class="container">
+    <section id="tools" class="card">
+      <h2>Tools</h2>
+      <div class="grid">
+        <div class="tool">
+          <h3>Quick Calculator</h3>
+          <input id="calcInput" placeholder="e.g., 12*(5+3)/4" />
+          <button id="calcBtn">=</button>
+          <div id="calcOut" class="output" aria-live="polite"></div>
+          <p class="hint">Supports + − × ÷, parentheses, decimals. (No variables.)</p>
+        </div>
+        <div class="tool">
+          <h3>Quadratic Solver</h3>
+          <div class="row">
+            <input id="qa" placeholder="a" type="number" />
+            <input id="qb" placeholder="b" type="number" />
+            <input id="qc" placeholder="c" type="number" />
+          </div>
+          <button id="quadBtn">Solve ax² + bx + c = 0</button>
+          <div id="quadOut" class="output" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="practice" class="card">
+      <h2>Practice Generator</h2>
+      <p>Solve for <b>x</b>:</p>
+      <div id="question" class="question">Press “New Problem”.</div>
+      <div class="row">
+        <input id="answer" placeholder="your x" inputmode="decimal" />
+        <button id="checkBtn">Check</button>
+        <button id="newBtn" class="ghost">New Problem</button>
+      </div>
+      <div id="result" class="output" aria-live="polite"></div>
+    </section>
+
+    <section id="notes" class="card">
+      <h2>Notes</h2>
+      <p>Type anything—saved to this browser automatically.</p>
+      <textarea id="notesBox" rows="10" placeholder="Your notes here..."></textarea>
+      <div class="row end">
+        <button id="clearNotes" class="ghost">Clear Notes</button>
+      </div>
+    </section>
+
+    <section id="settings" class="card">
+      <h2>Settings</h2>
+      <label for="hwUrl"><b>Homework URL</b> (your jsDelivr/GitHub file, e.g. singlefile.html)</label>
+      <input id="hwUrl" placeholder="https://cdn.jsdelivr.net/gh/<you>/<repo>@main/singlefile.html" />
+      <div class="row">
+        <button id="saveUrl" class="primary">Save</button>
+        <button id="testInline" class="secondary">Test Inline</button>
+        <button id="testTab" class="secondary">Test New Tab</button>
+      </div>
+
+      <div id="inlineOutput" class="inline-output card subtle" style="display:none">
+        <h3>Inline Preview</h3>
+        <div id="homeworkContainer">Loading…</div>
+      </div>
+
+      <p class="hint">
+        Tip: While testing, we add a cache‑buster (<code>?t=Date.now()</code>) so you always see your latest commit.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> Your Name • Built for learning
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
 
